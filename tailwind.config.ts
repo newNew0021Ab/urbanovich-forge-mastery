@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'serif': ['Playfair Display', 'serif'],
+				'sans': ['Inter', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom color palette
+				'mocha-mousse': 'hsl(var(--mocha-mousse))',
+				'digital-sage': 'hsl(var(--digital-sage))',
+				'warm-beige': 'hsl(var(--warm-beige))',
+				'soft-cream': 'hsl(var(--soft-cream))',
+				'charcoal': 'hsl(var(--charcoal))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

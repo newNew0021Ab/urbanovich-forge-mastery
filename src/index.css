@@ -2,41 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Premium Blacksmith Design System - Earthy Biophilic Theme
+Colors: Mocha Mousse, Digital Sage, Beige, White
+Typography: Serif headlines, Sans-serif body
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Earthy Color Palette */
+    --mocha-mousse: 25 23% 45%;        /* #8B6E5C */
+    --digital-sage: 150 25% 55%;       /* #7FA99B */
+    --warm-beige: 35 25% 85%;          /* #E8DDD4 */
+    --soft-cream: 35 15% 95%;          /* #F7F5F2 */
+    --charcoal: 25 15% 15%;            /* #2A261F */
+    
+    /* System Colors */
+    --background: 35 15% 98%;          /* Almost white with warm undertone */
+    --foreground: 25 15% 15%;          /* Charcoal */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 35 15% 98%;
+    --card-foreground: 25 15% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 35 15% 98%;
+    --popover-foreground: 25 15% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 25 23% 45%;             /* Mocha Mousse */
+    --primary-foreground: 35 15% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 150 25% 55%;          /* Digital Sage */
+    --secondary-foreground: 35 15% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 35 25% 90%;               /* Light beige */
+    --muted-foreground: 25 15% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 35 25% 85%;              /* Warm beige */
+    --accent-foreground: 25 15% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 35 15% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 35 20% 88%;
+    --input: 35 20% 92%;
+    --ring: 25 23% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+    
+    /* Custom Design Tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--mocha-mousse)) 0%, hsl(var(--digital-sage)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--soft-cream)) 0%, hsl(var(--warm-beige)) 100%);
+    --shadow-soft: 0 4px 20px hsl(var(--mocha-mousse) / 0.1);
+    --shadow-elegant: 0 8px 32px hsl(var(--mocha-mousse) / 0.15);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +118,38 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Biophilic decorative elements */
+  .leaf-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23E8DDD4' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10c2.5 0 4.8-0.9 6.6-2.4C18.4 25.8 20 23.1 20 20z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .subtle-gradient {
+    background: var(--gradient-subtle);
+  }
+  
+  .elegant-shadow {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .soft-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .smooth-transition {
+    transition: var(--transition-smooth);
   }
 }
